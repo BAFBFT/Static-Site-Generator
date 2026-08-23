@@ -20,6 +20,7 @@ def split_nodes_image(old_nodes: list[TextNode]) -> list[TextNode]:
     for node in old_nodes:
         if node.text_type != TextType.TEXT:
             new_nodes.append(node)
+            continue
         sub_new_nodes = []
         node_imgs = extract_markdown_images(node.text)
         if not node_imgs:
@@ -47,6 +48,7 @@ def split_nodes_link(old_nodes: list[TextNode]) -> list[TextNode]:
     for node in old_nodes:
         if node.text_type != TextType.TEXT:
             new_nodes.append(node)
+            continue
         sub_new_nodes = []
         node_imgs = extract_markdown_links(node.text)
         if not node_imgs:
