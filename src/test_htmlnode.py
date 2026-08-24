@@ -3,7 +3,7 @@ import unittest
 from htmlnode import HTMLNode, LeafNode, ParentNode
 
 
-class TestTextNode(unittest.TestCase):
+class TestHTMLNode(unittest.TestCase):
     def test_repr(self):
         # test fro 
         node = HTMLNode("<p>", "yo, I like your cut G", children=None, props=None)
