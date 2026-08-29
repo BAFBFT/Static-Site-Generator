@@ -23,6 +23,7 @@ def is_ordered_list(block: str) -> bool:
     if not ORDERED_LIST_PATTERN.fullmatch(block):
         return False
     for expected, line in enumerate(block.split("\n"), start=1):
+        # if the digit string is not the correct number (numerical value, increments by 1) it is invalid markdown
         if int(ORDERED_ITEM_PATTERN.match(line).group(1)) != expected: # type: ignore
             return False
     return True
