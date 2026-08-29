@@ -47,4 +47,4 @@ def text_node_to_html_node(text_node: TextNode) -> LeafNode:
         case TextType.IMAGE:
             if text_node.url is None:
                 raise ValueError("invalid URL")
-            return LeafNode("img", "", {"src": text_node.url, "alt": text_node.text})
+            return LeafNode("img", " ", {"src": text_node.url, "alt": text_node.text})
