@@ -5,7 +5,7 @@ from htmlnode import HTMLNode, LeafNode, ParentNode
 
 class TestHTMLNode(unittest.TestCase):
     def test_repr(self):
-        # test fro 
+        # test html repr
         node = HTMLNode("<p>", "yo, I like your cut G", children=None, props=None)
         node_repr = "HTMLNode(<p>, yo, I like your cut G, None, None)"
         self.assertEqual(node.__repr__(), node_repr)
