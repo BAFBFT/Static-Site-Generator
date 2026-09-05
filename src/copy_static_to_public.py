@@ -27,5 +27,5 @@ def move_files(src: Path, dest: Path) -> None:
             print("Source file doesn't exist")
 
 def file_transfer(src: Path, dest: Path) -> None:
+    safe_delete(dest)
     move_files(src, dest)
-    safe_delete(src)
