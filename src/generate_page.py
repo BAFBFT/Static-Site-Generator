@@ -21,10 +21,10 @@ def generate_page(from_path: Path, template_path: Path, dest_path: Path) -> None
 
     from_path_html = markdown_to_html_node(from_path_str).to_html()
 
-    page_title = extract_title(from_path_html)
+    page_title = extract_title(from_path_str)
 
-    template_path_str.replace("{{ Title }}", page_title)
-    template_path_str.replace("{{ Content }}", from_path_html)
+    template_path_str = template_path_str.replace("{{ Title }}", page_title)
+    template_path_str = template_path_str.replace("{{ Content }}", from_path_html)
 
-    dest_path.mkdir(parents=True, exist_ok=True)
+    dest_path.parent.mkdir(parents=True, exist_ok=True)
     dest_path.write_text(template_path_str, encoding="utf-8")

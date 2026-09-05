@@ -14,7 +14,7 @@ def extract_markdown_links(text: str) -> list[tuple[str, str]]:
     extracted_links = re.findall(pattern, text)
     return extracted_links
 
-
+# TODO: complex implementation, should be refactored
 def split_nodes_image(old_nodes: list[TextNode]) -> list[TextNode]:
     new_nodes : list[TextNode] = []
     for node in old_nodes:
