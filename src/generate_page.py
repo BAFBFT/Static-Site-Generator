@@ -12,6 +12,7 @@ def extract_title(markdown: str) -> str:
             return line[2:].strip()
     raise ValueError("no h1 heading found")
 
+
 def generate_page(from_path: Path, template_path: Path, dest_path: Path) -> None:
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")
     
