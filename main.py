@@ -10,10 +10,10 @@ DOCS_PATH = Path("docs")
 STATIC_PATH = Path("static")
 FROM_PATH = Path("content")
 TEMPLATE_PATH = Path("template.html")
-BASE_PATH = Path(sys.argv[0]) if sys.argv else Path('/')
+BASE_PATH = Path(sys.argv[0]).parent if sys.argv else Path('/')
 
 def main():
-    
+
     file_transfer(STATIC_PATH, DOCS_PATH)
     generate_pages_recursive(FROM_PATH, TEMPLATE_PATH, DOCS_PATH, BASE_PATH)
 
