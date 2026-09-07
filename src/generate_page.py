@@ -13,7 +13,7 @@ def extract_title(markdown: str) -> str:
     raise ValueError("no h1 heading found")
 
 
-def generate_page(from_path: Path, template_path: Path, dest_path: Path, base_path: Path) -> None:
+def generate_page(from_path: Path, template_path: Path, dest_path: Path, base_path: str) -> None:
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")
     
     from_path_str = from_path.read_text(encoding="utf-8")
@@ -35,7 +35,7 @@ def generate_page(from_path: Path, template_path: Path, dest_path: Path, base_pa
     index_path.write_text(template_path_str, encoding="utf-8")
 
 
-def generate_pages_recursive(from_path: Path, template_path: Path, dest_path: Path,  base_path: Path) -> None:
+def generate_pages_recursive(from_path: Path, template_path: Path, dest_path: Path,  base_path: str) -> None:
     print(f"Generating pages from {from_path} to {dest_path} using {template_path}")
 
     for child in from_path.iterdir():

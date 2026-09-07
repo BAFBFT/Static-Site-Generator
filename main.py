@@ -10,7 +10,7 @@ DOCS_PATH = Path("docs")
 STATIC_PATH = Path("static")
 FROM_PATH = Path("content")
 TEMPLATE_PATH = Path("template.html")
-BASE_PATH = Path(sys.argv[0]).parent if sys.argv else Path('/')
+BASE_PATH = sys.argv[1] if len(sys.argv) > 1 else "/"
 
 def main():
 
